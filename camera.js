@@ -1,16 +1,14 @@
-$("input").change(function(e) {
+const image_input = document.querySelector("#image_input");
+var uploaded_image = "";
 
-    for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
-        
-        var file = e.originalEvent.srcElement.files[i];
-        
-        var img = document.createElement("img");
-        var reader = new FileReader();
-        reader.onloadend = function() {
-             img.src = reader.result;
-        }
-        reader.readAsDataURL(file);
-        $("input").after(img);
-    }
-  });
+image_input.addEventListener("change", function(){
+    const reader = new FileReader();
+    reader.addEventListener("load",()=>{
+        uploaded_image = reader.result; 
+        document.querySelector("#display_image").style.backgroundImage = `url(${uploaded_image})`;
+    })
+
+    reader.readAsDataURL(this.files[0]);
+
+})
   
