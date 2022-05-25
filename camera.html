@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera</title>
+</head>
+<body>
+    <h1>Contrato crediticio</h1>
+    <!-- Enter data : <input type="text" name="" id="take_input"> -->
+    <br>
+    Enter image :  <input type="file" name="foto" id="take_input" class="SubirFoto" accept="image/*" capture="camera" />
+    <br>
+    <button type="button" id="save_value">save in local storage</button>
+    <br>
+    <label>Read_localstorage : <span id="localstorage_value"></span>
+        <img src="localstorage_value" alt="" srcset="">
+    </label>
+    <br>
+    <button type="button" id="read_localstorage">Read_localstorage</button>
+    <br>
+    <button type="button" id="delete_data">Delete data</button>
+    
+    <script src="camera.js"></script>
+   
+    
+</body>
+</html>
