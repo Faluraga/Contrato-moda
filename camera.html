@@ -8,9 +8,12 @@
     <title>Document</title>
 </head>
 <body>
+    <script src="camera.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+   
+    
 
     <div>
-        
         Foto frontal cedula :  <input type="file" name="foto" id="image_input" accept="image/png, image/jpg "   />
         <br>
         <div id="display_image"></div>
@@ -27,9 +30,32 @@
         <br>
         <div id="display_image2"></div>
     </div>
-
-
-    <script src="camera.js"></script>
+    <br>
     
+        <form  method="post" >
+            <input class="name" type="text" id="name" placeholder="Name">
+            <input class="email" type="email" id="email" placeholder="Email">
+            <textarea name="msg" id="msg" cols="5" rows="5" placeholder="your message"></textarea>
+            <input type="button" value="Send Email" onclick="sendEmail()" />
+        </form>
+   
+    <script>
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const msg = document.getElementById('msg');
+        // funcion enviar email
+       function sendEmail() {Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "vortexlabcol@gmail.com",
+            Password : "ADE19AD6E06EEEDCA1607AAD85A2B008A46D",
+            To :email.value,
+            From : "vortexlabcol@gmail.com",
+            Subject : name.value,
+            Body : msg.value
+            }).then(
+            message => alert(message)
+            );   
+        }
+    </script>
 </body>
 </html>

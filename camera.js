@@ -1,3 +1,7 @@
+
+///Logica para capturar imagenes mediante la camara del dispositivo ò galeria , y mostrar en pantalla
+
+//variables para guardar imagenes 
 const image_input = document.querySelector("#image_input");
 const image_input1 = document.querySelector("#image_input1");
 const image_input2 = document.querySelector("#image_input2");
@@ -5,7 +9,7 @@ var uploaded_image = "";
 var uploaded_image1 = "";
 var uploaded_image2 = "";
 
-
+//funcion para cargar imagen en pantalla (frontal cedula)
 image_input.addEventListener("change", function(){
     const reader = new FileReader();
     reader.addEventListener("load",()=>{
@@ -18,6 +22,7 @@ image_input.addEventListener("change", function(){
 
 })
 
+//funcion para cargar imagen en pantalla (Atras cedula)
 image_input1.addEventListener("change", function(){
     const reader = new FileReader();
     reader.addEventListener("load",()=>{
@@ -30,6 +35,7 @@ image_input1.addEventListener("change", function(){
 
 })
 
+//funcion para cargar imagen en pantalla (selfie)
 image_input2.addEventListener("change", function(){
     const reader = new FileReader();
     reader.addEventListener("load",()=>{
