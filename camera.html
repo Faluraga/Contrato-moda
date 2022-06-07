@@ -5,17 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-storage.js"></script>
+    <title>Minka</title>
 </head>
 <body>
  
     <script src="https://smtpjs.com/v3/smtp.js"></script> 
-   
-    
 
-    <input type="file" id="image_input" accept="image/png , imagen/jpg">
+    <input type="file" id="photo" accept="image/*" >
+    <!-- <button onclick="upload_imagen()">upload_imagen</button> -->
 
     <div id="display_image"></div>
+    <div >
+        <input type="checkbox" name="check_cod_gerente"  id="check_cod_gerente" >
+    </div>
+    <div >
+        <input type="number" class="form-control" id="codGerente" value="SG" name = "codGerente" placeholder="Código de gerente" disabled ="" ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57" required >
+    </div>
 
     <script src="script.js"></script>
     <br>
@@ -41,9 +48,23 @@
             Subject : name.value,
             Body : msg.value
             }).then(
-            message => alert(message)
+            message => console.log(message)
             );   
         }
     </script>
+    <script type = "text/javascript">
+        //Logica input codigo gerente
+ 
+       document.getElementById('check_cod_gerente').addEventListener('click', function(e) {
+        var gerenteInput = document.getElementById('codGerente');   
+        if (gerenteInput.disabled == true){
+            gerenteInput.disabled = false;
+        }else if (gerenteInput.disabled == false){
+            gerenteInput.disabled = true;
+        }
+
+        });
+  
+   </script>
 </body>
 </html>
