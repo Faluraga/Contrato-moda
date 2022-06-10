@@ -26,18 +26,21 @@
 
     <script src="script.js"></script>
     <br>
-    
+ 
+    ////Enviar email
         <form  method="post" >
             <input class="name" type="text" id="name" placeholder="Name">
             <input class="email" type="email" id="email" placeholder="Email">
-            <textarea name="msg" id="msg" cols="5" rows="5" placeholder="your message"></textarea>
-            <input type="button" value="Send Email" onclick="sendEmail()" />
+            <!-- <textarea name="msg" id="msg" cols="5" rows="5" placeholder="your message"></textarea> -->
+            <input type="button" value="Send Email" onclick="sendEmail()"/>
         </form>
-   
+        
+     
+
     <script>
         const name = document.getElementById('name');
         const email = document.getElementById('email');
-        const msg = document.getElementById('msg');
+        // const msg = document.getElementById('msg');
         // funcion enviar email
        function sendEmail() {Email.send({
             Host : "smtp.elasticemail.com",
@@ -46,7 +49,73 @@
             To :email.value,
             From : "vortexlabcol@gmail.com",
             Subject : name.value,
-            Body : msg.value
+            Body : `<body
+            style="background-color: blanchedalmond ;
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 500;
+                    width: 100vw;
+                    height: 100vh;
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; "
+                    img="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" >
+
+      
+                <div style=" background-image: url(/assets/fotoMinkaOscuraMail.png);
+                            background-repeat: no-repeat;
+                            width: 800px;
+                            height: 500px;
+                            padding-left: 50px;">
+                    <div  style=" font-size: 30pt;
+                                font-weight: 700;
+                                color: #fff;
+                                margin-top: 30px;">
+                        ¡Felicitaciones!
+                    </div>          
+                        <div class="copyOne" style="font-size: 16pt;
+                                    font-weight: 300;
+                                    color: #fff;
+                                    margin-top: 30px;">
+                            Estás a un paso de iniciar tu propio negocio con Minka.
+                            Estas son tus credenciales para iniciar sesión en La Oficina Virtual:
+                        </div>
+                        <div class="copyTwo" style="font-size: 16pt;
+                                                font-weight: 700;
+                                                color: #fff;
+                                                margin-top: 30px;">
+                            Usuario: 1143565789
+                            Contraseña: 1143565789
+                        </div>
+                        <div class="copyThree" style=" font-size: 16pt;
+                                                    font-weight: 300;
+                                                    color: aquamarine;
+                                                    margin-top: 30px;">
+                            Podrás realizar tus pedidos, administrar tus clientes y
+                            saber el estado de tus ganancias  
+                        </div>
+                        <div class="enlaceOficina" style=" font-size: 10pt;
+                                                        font-weight: 300;
+                                                        color: #fff;">
+                            <a href="http://52.204.202.48/crm/login_new.php" target="_blank" style="font-size: 10pt;
+                                                                                                    font-weight: 300;
+                                                                                                    color: #fff;">
+                                http://52.204.202.48/crm/login_new.phphref="http://52.204.202.48/crm/login_new.php
+                            </a>
+                        </div>
+                        <div class="logoContainer" style=" height: 100px;
+                                                        margin-right: 100px;
+                                                        display: flex;
+                                                        justify-content: center;">
+                            <div class="Logo" style="background-image: url(/assets/MNKA\ PNG.png);
+                                                    background-repeat: no-repeat;
+                                                    width:40%;
+                                                    height: 100%;
+                                                    margin-top: 30px;">       
+                            </div>                
+                        </div>
+                </div>`,
+            
             }).then(
             message => console.log(message)
             );   
@@ -64,7 +133,6 @@
         }
 
         });
-  
    </script>
 </body>
 </html>

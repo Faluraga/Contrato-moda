@@ -17,6 +17,30 @@ body{
     background-size: cover;
 }
 
+#display_image1{
+    width: 450px;
+    height: 250px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+}
+
+#display_image2{
+    width: 450px;
+    height: 250px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+}
+#display_image3{
+    width: 450px;
+    height: 250px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+}
+
+
 
 
 
