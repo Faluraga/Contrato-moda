@@ -10,39 +10,49 @@
 <body>
     /////Importar imagenes de firebase-storage
     <form  method="get" >
-        <select id="typeImage" name="typeImage" placeholder="Tipo de Imagen"  class="form-control" required>
+        <!-- <select id="typeImage" name="typeImage" placeholder="Tipo de Imagen"  class="form-control" required>
             <option selected disabled value="Tipo de Imagen">Tipo de imagen</option>
             <option value="cedulaFrontal">cedulaFrontal</option>
             <option value="cedulaTrasera">cedulaTrasera</option>
             <option value="selfie">selfie</option>
-        </select>
+        </select> -->
         <input class="cedula" type="number" id="cedula" placeholder="cedula">
         <!-- <textarea name="msg" id="msg" cols="5" rows="5" placeholder="your message"></textarea> -->
         <input type="button" value="Consultar" onclick="getImage()" />
     </form>
     <div>
-        <div id="display_image1"> </div>
+        <div id="display_image1" name="display_image1" class="display_image1"> </div>
     </div>
     <div>
-        <div id="display_image2"> </div>
+        <div id="display_image2" name="display_image2" class="display_image2"> </div>
     </div>
     <div>
-        <div id="display_image3"> </div>
+        <div id="display_image3" name="display_image3" class="display_image3"> </div>
     </div>
  
     <script >
+        
+
         function getImage() {
-            
             const typeImage = document.getElementById('typeImage').value;
+            const display_image1 = document.getElementById('display_image1');
+            const display_image2 = document.getElementById('#display_image2');
+            const display_image3 = document.getElementById('display_image3');
             const cedula= document.getElementById('cedula').value;
             const ccFrontal = `https://firebasestorage.googleapis.com/v0/b/minka-5812e.appspot.com/o/Minka%2F${cedula}%2FcedulaFrontal?alt=media&token`;
             const ccTrasera = `https://firebasestorage.googleapis.com/v0/b/minka-5812e.appspot.com/o/Minka%2F${cedula}%2FcedulaTrasera?alt=media&token`;
             const selfie = `https://firebasestorage.googleapis.com/v0/b/minka-5812e.appspot.com/o/Minka%2F${cedula}%2Fselfie?alt=media&token`;
-            document.querySelector("#display_image1").style.backgroundImage = `url(${ccFrontal})`;
-            document.querySelector("#display_image2").style.backgroundImage = `url(${ccTrasera})`;
-            document.querySelector("#display_image3").style.backgroundImage = `url(${selfie})`;
-            console.log(typeImage);
-            console.log(cedula);   
+            const noInfo = "https://www.bioparcfuengirola.es/wp-content/uploads/2017/08/INFO-NO-DISPONIBLE.jpg"
+            
+               
+          
+                document.querySelector("#display_image1").style.backgroundImage = `url(${ccFrontal})`;
+                document.querySelector("#display_image2").style.backgroundImage = `url(${ccTrasera})`;
+                document.querySelector("#display_image3").style.backgroundImage = `url(${selfie})`;
+      
+            
+           
+
         }
         
     </script>
